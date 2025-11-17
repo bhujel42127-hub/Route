@@ -1,0 +1,13 @@
+import { Navigate } from "react-router-dom";
+import type { ProtectedRouteProps } from "./Props";
+
+export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
+  const user = localStorage.getItem("user");
+
+  if (!user) {
+    {
+      return <Navigate to="/profile" replace />;
+    }
+  }
+  return children;
+};
