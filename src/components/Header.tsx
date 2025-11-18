@@ -12,7 +12,7 @@ export const AdminHeader = ({ collapsed, setCollapsed }: Collapsed) => {
     {
       key: "1",
       label: "Logout",
-      href: "/login",
+      href: "Route/login",
       onClick: () => {
         localStorage.removeItem("user");
       },

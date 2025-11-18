@@ -2,7 +2,6 @@ import { Button, Form, Input } from "antd";
 import type { FieldType } from "../Props";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Login() {
   const navigate = useNavigate();
 
