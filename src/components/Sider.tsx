@@ -13,17 +13,17 @@ export const AdminSider = ({ collapsed }: { collapsed: boolean }) => {
     {
       key: "1",
       icon: <UserOutlined />,
-      label: "Users",
+      label: "item1",
     },
     {
       key: "2",
       icon: <VideoCameraOutlined />,
-      label: "Videos",
+      label: "item2",
     },
     {
       key: "3",
       icon: <UploadOutlined />,
-      label: "Uploads",
+      label: "item3",
     },
   ];
 

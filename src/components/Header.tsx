@@ -9,14 +9,9 @@ export const AdminHeader = ({ collapsed, setCollapsed }: Collapsed) => {
   const navigate = useNavigate();
 
   const items = [
-    {
-      key: "1",
-      label: "Logout",
-      href: "/login",
-      onClick: () => {
-        localStorage.removeItem("user");
-      },
-    },
+    { key: "1", label: "Home", href: "/" },
+    { key: "2", label: "About", href: "/about" },
+    { key: "3", label: "Blog", href: "/blog" },
   ];
 
   function onClick(e: any) {
