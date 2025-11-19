@@ -14,7 +14,7 @@ export default function SignUp() {
   return (
     <div className="flex w-full h-screen">
       <div className="w-1/2 h-full bg-gray-100 flex items-center justify-center">
-        <h2>Checking</h2>
+        <h2>Logo</h2>
       </div>
       <div className="w-1/2 flex justify-center items-center h-full">
         <Form
