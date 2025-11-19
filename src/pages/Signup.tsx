@@ -6,8 +6,8 @@ export default function SignUp() {
   const navigate = useNavigate();
 
   const handleFinish = (values: FieldType) => {
-    console.log("Form submitted!", values);
-    localStorage.setItem("user", "loggedIn");
+    // create a simple local user record and go straight to dashboard
+    localStorage.setItem("user", values.username);
     navigate("/login");
   };
 
@@ -46,6 +46,9 @@ export default function SignUp() {
             <Button type="primary" htmlType="submit">
               Sign Up
             </Button>
+            <a href="/login" className="flex justify-content">
+              Already have an account?
+            </a>
           </Form.Item>
         </Form>
       </div>

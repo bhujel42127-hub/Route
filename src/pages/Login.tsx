@@ -7,7 +7,10 @@ export default function Login() {
 
   const handleFinish = (values: FieldType) => {
     console.log("Form submitted!", values);
-    navigate("/dashboard");
+    localStorage.setItem("user", JSON.stringify(values.username));
+    if (values.username === "admin") {
+      navigate("/dashboard");
+    }
   };
 
   return (
@@ -45,6 +48,9 @@ export default function Login() {
             <Button type="primary" htmlType="submit">
               Login
             </Button>
+            <a href="/signup" className="flex justify-content">
+              Don't have an account? Sign Up
+            </a>
           </Form.Item>
         </Form>
       </div>
