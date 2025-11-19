@@ -2,15 +2,13 @@ import { Button, Form, Input } from "antd";
 import type { FieldType } from "../Props";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function SignUp() {
   const navigate = useNavigate();
 
   const handleFinish = (values: FieldType) => {
-    console.log("Form submitted!", values);
-    localStorage.setItem("user", JSON.stringify(values.username));
-    if (values.username === "admin") {
-      navigate("/dashboard");
-    }
+    // create a simple local user record and go straight to dashboard
+    localStorage.setItem("user", values.username);
+    navigate("/login");
   };
 
   return (
@@ -46,10 +44,10 @@ export default function Login() {
 
           <Form.Item style={{ textAlign: "center" }}>
             <Button type="primary" htmlType="submit">
-              Login
+              Sign Up
             </Button>
-            <a href="/signup" className="flex justify-content">
-              Don't have an account? Sign Up
+            <a href="/login" className="flex justify-content">
+              Already have an account?
             </a>
           </Form.Item>
         </Form>

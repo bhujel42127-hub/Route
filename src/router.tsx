@@ -5,27 +5,37 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import UserProfile from "./pages/User";
 import { ProtectedRoute } from "./ProtectedRoute";
+import SignUp from "./pages/Signup";
+import RootRedirect from "./pages/RootRedirect";
 
 export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootRedirect />,
+  },
   {
     path: "/login",
     element: <Login />,
   },
   {
-    path: "/profile",
-    element: <UserProfile />,
+    path: "/signup",
+    element: <SignUp />,
   },
   {
-    path: "/",
-    element: <App />,
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute>
+        <App />
+      </ProtectedRoute>
+    ),
     children: [
       {
-        path: "/dashboard",
-        element: (
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        ),
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "profile",
+        element: <UserProfile />,
       },
     ],
   },

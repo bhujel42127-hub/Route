@@ -6,7 +6,7 @@ export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
   if (!user) {
     {
-      return <Navigate to="/profile" replace />;
+      return <Navigate to="/signup" replace />;
     }
   }
   return children;
